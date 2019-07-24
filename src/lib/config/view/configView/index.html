@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sbus Gateway</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="assets/boot/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link href="assets/table/dataTables.bootstrap4.css" rel="stylesheet">
+  <style>
+  .btn_edit:hover{
+    cursor: pointer;
+}
+.table td{
+    padding: 0.65rem;
+    vertical-align: top;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+.row-options:hover{
+    font-weight: bolder;
+}
+.mycontainer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+@media (min-width: 992px) {
+  .mycontainer {
+   width:90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mycontainer {
+    width:85%;
+  }
+}
+  </style>
+<link rel="stylesheet" href="styles.8197bbe0254eaa1de9b2.css"></head>
+
+<body>
+  <app-root></app-root>
+
+  <script src="assets/scripts/myjq.js"></script>
+  <script src="assets/scripts/mypopper.js"></script>
+  <script src="assets/scripts/byboot.js"></script>
+  <!-- <script src="assets/scripts/editscript.js"></script> -->
+  <script src="assets/scripts/bootstrap-confirmation.min.js"></script>
+  <script src="assets/table/jquery.dataTables.js"></script>
+  <script src="assets/table/dataTables.bootstrap4.js"></script>
+  <script src="assets/table/datatables-demo.js"></script>
+  <script>
+
+    $(document).mouseup(function (e) {
+      var confBox = $(".confirmation");
+      if ($('[data-toggle=confirmation]').is(e.target)) {
+        confBox.confirmation('show');;
+      } else if (!confBox.is(e.target) && confBox.has(e.target).length === 0 && !$('[data-toggle=confirmation]').is(e.target)) {
+        confBox.confirmation('hide');
+      }
+    })
+
+
+    setInterval(() => {
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle=confirmation]').confirmation({
+        rootSelector: '[data-toggle=confirmation]',
+        container: 'body'
+      });
+      $()
+    }, 1000);
+
+    // function remv(data){alert(data)}
+  </script>
+  <!-- <script src="assets/boot/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="assets/boot/bundle.js"></script> -->
+  <!-- <script type="text/javascript" src="./app.js"></script> -->
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.c5dd28b362270c767b34.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="scripts.2d8e6852108bc1890a1a.js"></script><script type="text/javascript" src="main.6f41b5e825d52632ba78.js"></script></body>
+
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create relay channel</title>
+</head>
+<body>
+	<h1>Create Relay Channel</h1>
+<form action="/admin/relay/channel/create" method="post">
+	<input type="text" name="name" placeholder="name"><br><br>
+	<input type="text" name="channel_number" placeholder="channel_number"><br><br>
+	<input type="hidden" name="relay_id" value="<%=relay.id%>">
+	<input type="submit" value="Create relay channel">
+</form>
+</body>
+</html>

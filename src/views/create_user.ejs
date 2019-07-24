@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin-Create User</title>
+
+</head>
+<body>
+<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+ <h3>Create a new user</h3>
+ <form action="/admin/users/create" method="post">
+ 	<input type="text" name="username" placeholder="username"><br><br>
+ 	<input type="text" name="password" placeholder="password"><br><br>
+ 	<input type="text" name="macaddress" placeholder="RSIP Macaddress"><br><br>
+ 	<input type="text" name="subnetId" placeholder="RSIP subnetid"><br><br>
+ 	<input type="text" name="deviceId" placeholder="RSIP deviceid"><br><br>
+ 	<input type="submit" value="create"><br>
+ </form>
+
+</body>
+</html>

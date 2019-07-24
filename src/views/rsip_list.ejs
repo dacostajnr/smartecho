@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin -List of RSIPs</title>
+</head>
+<body>
+	<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+
+	<h1>RSIPs</h1>
+	<ul>
+		<% rsips.forEach(function(rsip){ %>
+			<li>userId:<%= rsip. UserId%></li>
+			<li>rsip Id:<%= rsip.id %></li>
+			<li>rsip subnetId:<%= rsip.subnetId %></li>
+			<li>rsip deviceId:<%= rsip.deviceId %></li>
+			<li>
+				<form action="/admin/rsips/delete" method="post">
+					<input type="hidden" value="<%=rsip.id%>" name="id">
+					<input type="submit" value="delete">
+				</form>
+			</li><br><br>
+		<%}) %>
+	</ul>
+
+</body>
+</html>

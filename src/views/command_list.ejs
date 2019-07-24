@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin - List of commands</title>
+</head>
+<body>
+
+<h1>List of commands</h1>
+
+<table>
+	<thead>
+		<th>Email</th>
+		<th>MacAddress</th>
+		<th>Intent</th>
+		<th>Location</th>
+		<th>Delete</th>
+	</thead>
+	<tbody>
+
+<% commands.forEach(function(command){ %>
+		<tr>
+			<td><%= command.email%></td>
+			<td><%= command.macaddress%></td>
+			<td><%= command.intent%></td>
+			<td><%= command.location%></td>
+			<td>
+				<form action="/admin/commands/delete" method="post">
+					<input type="hidden" name="id" value="<%=command.id%>">
+					<input type="submit" value="delete">
+				</form>
+			</td>
+		</tr>
+<%})%>
+
+
+	</tbody>
+	
+</table>
+
+</body>
+</html>

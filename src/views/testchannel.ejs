@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Relay Channels</title>
+</head>
+<body>
+
+<h1>Channels of Relay</h1>
+
+<ul>
+<% channels.forEach(function(channel){ %>
+       <li>Location:<%= channel.name %></li>
+       <li>Channel number:<%= channel.channel_number %></li>
+       <li>Relay id:<%= channel.RelayId %></li>
+       <li>Channel id:<%= channel.id %></li>
+       <li><a href="/admin/relay/channel/update/<%= channel.id %>">Update</a></li>
+       <li>
+       	<form action="/admin/relay/channel/delete/" method="post">
+       		<input type="hidden" name="relay_channel_id" value="<%=channel.id%>">
+       		<input type="hidden" name="relay_id" value="<%=channel.RelayId%>">
+       	<input type="submit" value="delete">       		
+       	</form>
+       </li>
+       <br><br>
+<%})%>
+</ul>
+
+</body>
+</html>

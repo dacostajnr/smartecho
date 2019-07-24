@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin-delete users</title>	
+</head>
+<body>
+<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+<h1>Delete Users</h1>
+<ul>
+	<%users.forEach(function(user){ %>
+		<li><%=user.username%>
+			<form action="/admin/users/delete" method="post">
+				<input type="hidden" name="id" value="<%=user.id%>">				
+				<input type="submit" value="delete">
+			</form>
+		</li><br>
+	<%})%>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin-update users</title>	
+</head>
+<body>
+<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+<h1>Delete Users</h1>
+<ul>
+	<%users.forEach(function(user){ %>
+		<a href="/admin/users/<%=user.id%>/update"><%=user.username%></a>
+		<br>
+	<%})%>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Relay</title>
+</head>
+<body>
+<h1>Create relay</h1>
+<form action="/admin/relay/create" method="post">
+	<input type="text" name="no_channels" placeholder="no_channels"><br><br>
+	<input type="text" name="subnetId" placeholder="subnetId"><br><br>
+	<input type="text" name="deviceId" placeholder="deviceId"><br><br>
+	<input type="hidden" name="id" value="<%= user.id%>">
+	<input type="submit" value="create relay">
+</form>
+</body>
+</html>

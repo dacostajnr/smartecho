@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin - User Detail </title>
+</head>
+<body>
+
+<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+
+
+<p>User id:<%= user.id%></p>
+<p>Username:<%= user.username%></p>
+<p>Password:<%= user.password%></p>
+<p>RSIP id:
+<% if(user.RSIP){ %>
+   <%= user.RSIP.id%>
+ <% } else{ %>  
+   none
+<% } %>
+</p>
+<p>RSIP MacAddress:<% if(user.RSIP){ %>
+   <%= user.RSIP.macaddress%>
+ <% } else{ %>  
+   none
+<% } %></p>
+<p>RSIP SubnetId:<% if(user.RSIP){ %>
+  <%= user.RSIP.subnetId%>
+ <% } else{ %>  
+   none
+<% } %></p>
+<p>RSIP DeviceId:<% if(user.RSIP){ %>
+   <%= user.RSIP.deviceId%>
+ <% } else{ %>  
+   none
+<% } %></p>
+<a href="/admin/relay/create/user/<%=user.id%>">Create Relay</a>
+<a href="/admin/user/<%=user.id%>/relays">See relays for this user</a>
+</body>
+</html>

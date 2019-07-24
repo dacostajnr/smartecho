@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+<a href="/admin/commands">List of commands</a><br>
+<a href="/admin/command/send">Send Command</a><br>
+<a href="/testrelay">All Relays in DataBase</a><br>
+<a href="/testchannel">All channels in DataBase</a><br>
+
+<h1>List of all users</h1>
+<ul>
+  <% users.forEach(function(user){ %>
+    <a href="/admin/users/detail/<%= user.id%>"><li><%= user.username %></li></a>
+    <li><%= user.id %></li>
+    <li><%= user.password %></li>
+    <br>
+  <% })%>
+</ul>
+</body>
+</html>

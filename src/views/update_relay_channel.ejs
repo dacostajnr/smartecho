@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Relay Channel</title>
+</head>
+<body>
+<h1>Update Relay Channel</h1>
+<form action="/admin/relay/channel/Update" method="post">
+	<input type="text" name="name" placeholder="name" value="<%=channel.name%>"><br><br>
+	<input type="text" name="channel_number" placeholder="channel_number" value="<%=channel.channel_number%>"><br><br>
+	<input type="hidden" name="id" value="<%=channel.id%>">
+	<input type="hidden" name="relay_id" value="<%=channel.Relay_id%>">
+	<input type="submit" value="update">
+
+</form> 
+
+</body>
+</html>

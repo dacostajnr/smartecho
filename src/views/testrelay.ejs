@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of relays</title>
+</head>
+<body>
+	<h1>List of Relays for current user</h1>
+<ul>
+	<% relays.forEach(function(relay){ %>
+		<li>Number of channels: <%= relay.no_channels%></li>
+		<li>Subnet id: <%= relay.subnetId%></li>
+		<li>Relay id: <%= relay.deviceId%></li>
+		<li>User id: <%= relay.UserId%></li>
+		<a href="/admin/relay/<%= relay.id%>/channels">See Channels</a>
+		<a href="/admin/relay/<%= relay.id%>/channel/create">Create Channel</a>
+		<br><br>
+
+
+	<%})%>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin-Update User</title>
+</head>
+<body>
+
+<a href="/">See all users</a><br>
+<a href="/admin/users/create">Create a new user</a><br>
+<a href="/admin/users/delete">Delete some users</a><br>
+<a href="/admin/users/update">Update some users</a><br>
+<a href="/admin/rsips">List of RSIPs</a><br>
+
+<h1>Update User</h1>	
+<%=user.username%>
+<form action="/admin/users/update" method="post">
+	<input type="hidden" name="id" value="<%=user.id%>"><br>
+	<input type="text" name="username" value="<%=user.username%>"><br>
+	<input type="text" name="password" value="<%=user.password%>"><br>
+	<input type="text" name="macaddress" value="<%=user.RSIP.macaddress%>"><br>
+	<input type="text" name="subnetId" value="<%=user.RSIP.subnetId%>"><br>
+	<input type="text" name="deviceId" value="<%=user.RSIP.deviceId%>"><br>
+	<input type="submit" value="update">
+	
+</form>
+
+</body>
+</html>

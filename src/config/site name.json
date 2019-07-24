@@ -1,0 +1,1 @@
+{"ipAddress":"127.0.0.1","destinationIP":"255.255.255.255","TimeoutPeriod":4000,"poll_Interval":2000,"modbusConfig":{"devices":[{"subnetid":1,"deviceid":20,"mb_Addr":50,"deviceType":"4Z","poll":true}],"mb_Port":"7727","coil_Size":4000,"holding_Size":4000},"sitename":"site name","logEnable":true,"password":"$2a$11$oCT.Vg8L6fB6TBXBcdtoaeHE5BXKDZL6RHVCtibw1D1OvshzNXDBC"}
