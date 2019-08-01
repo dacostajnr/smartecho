@@ -2,7 +2,7 @@
 <html>
 
 <head>  
-  <link type="text/css" rel="stylesheet" href="../../../../css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/font-awesome.min.css">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -114,24 +114,15 @@
           <div class="container-fluid">
     <div class="row">
       <div class="col l3"></div>
-  
-      <div class="col l3">
-        <ul>
-  <% relays.forEach(function(relay){ %>
-    <li>Numberof channels<%= relay.no_channels %></li>
-    <li>SubnetId: <% = relay.subnetId></li>
-    <li>DeviceId: <% = relay.deviceId></li>
-    <form action="/admin/relay/delete/" method="post">
-      <input type="hidden" name="relay_id" value="<%=relay.id%>">
-      <input type="hidden" name="UserId" value="<%=UserId%>">
-      <input type="submit" value="delete">
-    </form>
-    <br>
-  <% })%>
-
-
-  </ul>
+      <div class="col s12 m12 l6">
+        <div class="carousel ">
+          <a class="carousel-item" href="#one!"><img src="img/1.jpg"></a>
+          <a class="carousel-item" href="#two!"><img src="img/2.jpg"></a>
+          <a class="carousel-item" href="#three!"><img src="img/3.jpg"></a>
+          <a class="carousel-item" href="#four!"><img src="img/4.jpg"></a>
+        </div>        
       </div>
+      <div class="col l3"></div>
 
 
       

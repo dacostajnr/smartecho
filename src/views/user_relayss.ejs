@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Relays</title>
+</head>
+<body>
+	<ul>
+  <% relays.forEach(function(relay){ %>
+    <li>Numberof channels<%= relay.no_channels %></li>
+    <li>SubnetId: <% = relay.subnetId></li>
+    <li>DeviceId: <% = relay.deviceId></li>
+    <form action="/admin/relay/delete/" method="post">
+    	<input type="hidden" name="relay_id" value="<%=relay.id%>">
+    	<input type="hidden" name="UserId" value="<%=UserId%>">
+    	<input type="submit" value="delete">
+    </form>
+    <br>
+  <% })%>
+
+
+	</ul>
+</body>
+</html>

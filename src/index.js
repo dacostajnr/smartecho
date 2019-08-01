@@ -281,7 +281,7 @@ Webhook.get("/",function(req,res){
 
     User.findAll({include:[{model:RSIP}]}).then(function(users){
     if (users.length!=0){     
-      res.render("index",{"users":users})
+      res.render("index_clone",{"users":users})
     }
     else{
       //res.send("no users found");
@@ -295,7 +295,7 @@ Webhook.get("/",function(req,res){
 
 // show page for creating a new user
 Webhook.get("/admin/users/create",function(req,res){
-  res.render("create_user",{})
+  res.render("create_user_clone",{})
 });
 
 //Create a new user with RSIP details
@@ -323,7 +323,7 @@ Webhook.post("/admin/users/create",function(req,res){
 // Get detail of a user
 Webhook.get("/admin/users/detail/:id",function(req,res,id){
   User.findByPk(req.params.id,{include:[{model:RSIP}]}).then(function(user){
-    res.render("user_detail",{"user":user})
+    res.render("user_detail_clone",{"user":user})
   });
 });
 
@@ -395,7 +395,7 @@ Webhook.post("/admin/rsips/delete",function(req,res){
 
 Webhook.get("/admin/commands",function(req,res){
   Command.findAll().then(function(commands){
-    res.render("command_list",{"commands":commands})
+    res.render("command_list_clone",{"commands":commands})
   })
 });
 // Webhook.post("/admin/command/create",function(req,res){
@@ -449,22 +449,25 @@ Webhook.get("/admin/user/:id/relays",function(req,res){
   Relay.findAll({where:{
     "UserId":req.params.id
   }}).then(function(relays){
-    res.render("relay_list",{"relays":relays,"UserId":req.params.id})
+    res.render("user_relays_clone",{"relays":relays,"UserId":req.params.id})
   })
+})
+Webhook.get("/admin/devices",function(req,res){
+     res.render("devices",{});
 })
 
 Webhook.get("/admin/relays/user/:id",function(req,res,id){
   Relay.findAll({where:{
     "UserId":req.params.id
   }}).then(function(relays){
-    res.render("user_relays",{"relays":relays})
+    res.render("user_relays_clone",{"relays":relays})
   })  
 })
 
 
 Webhook.get("/admin/relay/create/user/:id",function(req,res,id){
     User.findByPk(req.params.id).then(function(user){
-      res.render("create_relay",{"user":user})
+      res.render("create_relay_clone",{"user":user})
     })
 })  
 
@@ -505,7 +508,7 @@ Webhook.get("/admin/relay/:id/channels",function(req,res,id){
   }}).then(function(channels){
     //res.send(channels)
     //channels.forEach(function(x){console.log(x.RelayId)})
-    res.render("relay_channel_list",{"channels":channels})
+    res.render("relay_channel_list_clone",{"channels":channels,"Rid":req.params.id})
   })
 })
 
@@ -513,7 +516,7 @@ Webhook.get("/admin/relay/:id/channels",function(req,res,id){
 Webhook.get("/admin/relay/:id/channel/create",function(req,res){
   // SHOW  CREATE  channel PAGE for a specific relay
   Relay.findByPk(req.params.id).then(function(relay){
-    res.render("create_relay_channel",{"relay":relay})
+    res.render("create_relay_channel_clone",{"relay":relay})
   })
 
 })
@@ -542,7 +545,8 @@ Webhook.post("/admin/relay/channel/delete/",function(req,res){
 Webhook.get("/admin/relay/channel/update/:id",function(req,res){
   // show form for updating a relay channel 
   RelayChannel.findByPk(req.params.id).then(function(channel){
-    res.render("update_relay_channel",{"channel":channel})
+    //res.send(channel);
+    res.render("update_relay_channel_clone",{"channel":channel})
   })
 })
 
@@ -561,7 +565,7 @@ Webhook.post("/admin/relay/channel/update",function(req,res){
 
 Webhook.get("/admin/command/send",function(req,res){
   // show for for sending a command
-  res.render("create_command",{})
+  res.render("create_command_clone",{})
 })
 Webhook.post("/admin/command/send",function(req,res){
   Command.create({

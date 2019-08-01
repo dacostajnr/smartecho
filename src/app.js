@@ -82,7 +82,7 @@ app.setHandler({
         let url = `https://api.amazon.com/user/profile?access_token=${this.$request.getAccessToken()}`;
         await rp(url).then((body) => {
             let data = JSON.parse(body);
-            this.ask("hello world intent");             
+            this.ask("Smart echo here, how may I help you");             
         });
     }
     },
@@ -105,7 +105,7 @@ app.setHandler({
                 let intent = "LightOn";                
 
                 // create command here
-                this.ask("about to turn on light at "+location);
+                this.ask(location+" lights turned on");
                 console.log("about to turn on light at "+location);
 
                 myfunctions.createCommand(email,intent,location);    
@@ -127,7 +127,7 @@ app.setHandler({
             let intent = "LightOff"; 
 
             // create command her
-            this.ask("about to turn off light "+location)
+            this.ask(location+" lights turned off");
             console.log("about to turn off light "+location);
             myfunctions.createCommand(email,intent,location);
 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>  
+  <link type="text/css" rel="stylesheet" href="../../../css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../../../css/main.css" />
+  <link rel="stylesheet" href="../../../css/font-awesome.min.css">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materialize</title>
+
+  <style type="text/css">
+    /* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+  </style>
+</head>
+
+<body class="white lighten-4">
+
+
+
+
+
+
+          <div class="container-fluid">
+    <div class="row">
+      <div class="col l3"></div>
+      <div class="col s12 m6 l6">
+         <form action="/admin/users/create" method="post">
+            <input type="text" name="username" placeholder="username"><br><br>
+            <input type="text" name="password" placeholder="password"><br><br>
+            <input type="text" name="macaddress" placeholder="RSIP Macaddress"><br><br>
+            <input type="text" name="subnetId" placeholder="RSIP subnetid"><br><br>
+            <input type="text" name="deviceId" placeholder="RSIP deviceid"><br><br>
+            <input type="submit" value="create" class="waves-effect waves-light btn red"><br>
+          </form>       
+      </div>
+      <div class="col l3"></div>
+
+
+      
+    </div>
+    
+  </div>
+
+
+        
+<!-- Preloader dont touch -->
+  <div class="preloader-wrapper big active loader">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../../js/materialize.min.js"></script>  
+  <script type="text/javascript" src="../../js/chart.js"></script>
+  <script>
+
+      // ===========sidenav=============      
+      setTimeout(() => {
+      $(document).ready(function () {        
+        //Hide Preloader
+        $('.loader').fadeOut();
+        //Init Side nav
+        $('.button-collapse').sideNav();
+        //Count        
+      });
+    }, 1000);
+  </script>
+
+
+  <script>
+    // ===========carousel=============
+    setTimeout(() => {
+      $(document).ready(function () {        
+        // initiaiize carousel
+        $('.carousel').carousel();
+ 
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true,
+              indicators: true
+  });
+        //Count        
+      });
+    }, 1000);
+  </script>
+</body>
+
+</html>
